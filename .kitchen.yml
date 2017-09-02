@@ -13,13 +13,23 @@ verifier:
   name: inspec
 
 platforms:
-  - name: centos-7.2
+  #- name: centos-7.2
+  - name: ubuntu-16.04
+    driver:
+      box: ubuntu/xenial64
 
 suites:
-  - name: default
+  #- name: default
+    #run_list:
+      #- recipe[the_silver_searcher::default]
+    #verifier:
+      #inspec_tests:
+        #- test/smoke/default
+    #attributes:
+  - name: ubuntu
     run_list:
       - recipe[the_silver_searcher::default]
     verifier:
       inspec_tests:
-        - test/smoke/default
+        - test/smoke/ubuntu
     attributes:

@@ -4,5 +4,10 @@
 #
 # Copyright:: 2017, Sean Holden, All Rights Reserved.
 #
-package 'epel-release'
-package 'the_silver_searcher'
+
+if platform?('centos')
+  package 'epel-release'
+  package 'the_silver_searcher'
+elsif platform?('ubuntu')
+  package 'silversearcher-ag'
+end
